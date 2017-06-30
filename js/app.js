@@ -12,10 +12,14 @@ var minWinningPoint = prompt("Enter minimum points when a player should win the 
 
 gameInit();
 
+//New Game
+document.querySelector('.btn-new').addEventListener('click',gameInit);
+
 function gameInit(){
-	
 	//GLobal Score
 	scores = [0,0];
+
+	gamePlaying = true;
 	//RoundScore
 	roundScore  = 0;
 	//ActivePlayer Indicator
@@ -34,6 +38,7 @@ function gameInit(){
 	document.querySelector('.player-0-panel').classList.add('active');
 	document.querySelector('.player-0-panel').classList.remove('winner');
 	document.querySelector('.player-1-panel').classList.remove('winner');
+	
 };
 //6 faces of dice
 //dice = Math.floor(Math.random()*6) + 1;
@@ -115,5 +120,3 @@ document.querySelector('.btn-hold').addEventListener('click',function(){
 		}
 	}
 });
-//New Game
-document.querySelector('.btn-new').addEventListener('click',gameInit);
